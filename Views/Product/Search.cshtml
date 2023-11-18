@@ -1,0 +1,10 @@
+﻿@model IEnumerable<HaVanThy_DoAn_WebDoTheThaoNike.Models.Product>
+
+<!-- Render your products here -->
+@foreach (var product in Model)
+{
+    <div>
+        @product.ProductName
+        @product.Price
+    </div>
+}

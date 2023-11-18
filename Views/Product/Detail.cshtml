@@ -1,0 +1,34 @@
+﻿@model HaVanThy_DoAn_WebDoTheThaoNike.Models.Product
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>ProducDetail</h2>
+
+<table class="table">
+
+    <tr>
+        <th>Product ID</th>
+        <td>@Model.ProductID</td>
+    </tr>
+    <tr>
+        <th>Product Name</th>
+        <td>@Model.ProductName</td>
+    </tr>
+    <tr>
+        <th>Price</th>
+        <td>@Model.Price.ToString("C")</td>
+    </tr>
+
+    <tr>
+        <th>Category ID</th>
+        <td>@Model.CategoryID</td>
+    </tr>
+
+
+</table>
+
+<a href="@Url.Action("Index", "Product")">Back to List of Products</a>
+

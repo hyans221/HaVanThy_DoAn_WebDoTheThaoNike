@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Store | HaVanThy</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/css/style.css")" />
+    <title>@ViewBag.Title</title>
+</head>
+
+<body>
+    <!-- ------------------------- HEADER ------------------------- -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="/home/index">
+                    <img src="~/images/imgBanner/logo2.png" alt="Nike Store Logo" class="logo1">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto">
+                        <li>
+                            <a class="nav-link item-size" href="/home/index">Home</a>
+                        </li>
+                        <li>
+                            <a class="nav-link item-size" href="/product/index">Shop</a>
+                        </li>
+                        <li>
+                            <a class="nav-link item-size" href="#">About</a>
+                        </li>
+                        <li>
+                            <a class="nav-link item-size" href="#">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="search-container h-100">
+                        <div class="d-flex justify-content-center h-100">
+                            <div class="searchbar">
+                                <input class="search_input" type="text" name="" placeholder="Search...">
+                                <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="btn btn-outline-primary ms-2 cart-button" href="#">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    </a>
+                    <a class="btn btn-outline-primary ms-2 cart-button" href="#">
+                        <i class="fa-solid fa-user" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ------------------------- MAIN ------------------------- -->
+    <div>
+        @RenderBody()
+    </div>
+
+
+    </div>
+    <!-- ------------------------- FOOTER ------------------------- -->
+
+    <div class="container">
+        <div id="footer-placeholder" class="d-flex justify-content-between my-4 border-top"></div>
+        <footer class="py-5">
+            <div class="row">
+                <div class="col-3 ms-2">
+                    <h6>
+                        <ul class="nav flex-column ">
+                            <li class="nav-item mb-3"><a href="#" class="nav-link p-0 text-dark">FIND A STORE</a></li>
+                            <li class="nav-item mb-3">
+                                <a href="#" class="nav-link p-0 text-dark">BECOME A MEMBER</a>
+                            </li>
+                            <li class="nav-item mb-3">
+                                <a href="#" class="nav-link p-0 text-dark">STUDENT DISCOUNTS</a>
+                            </li>
+                            <li class="nav-item mb-3">
+                                <a href="#" class="nav-link p-0 text-dark">Send Us Feedback</a>
+                            </li>
+                            <li class="nav-item mb-3"><a href="#" class="nav-link p-0 text-dark">About</a></li>
+                        </ul>
+                    </h6>
+                </div>
+
+
+                <div class="col-2 ms-4">
+                    <h6>GET HELP</h6>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-3"><a href="#" class="nav-link p-0 text-muted">Order Status</a></li>
+                        <li class="nav-item mb-3"><a href="#" class="nav-link p-0 text-muted">Delivery</a></li>
+                        <li class="nav-item mb-3"><a href="#" class="nav-link p-0 text-muted">Returns</a></li>
+                        <li class="nav-item mb-3"><a href="#" class="nav-link p-0 text-muted">Payment Options</a></li>
+                        <li class="nav-item mb-3"><a href="#" class="nav-link p-0 text-muted">Contact Us</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="col-2 ms-4">
+                    <h6>ABOUT NIKE</h6>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-3"><a href="#" class="nav-link p-0 text-muted">News</a></li>
+                        <li class="nav-item mb-3"><a href="#" class="nav-link p-0 text-muted">Careers</a></li>
+                        <li class="nav-item mb-3"><a href="#" class="nav-link p-0 text-muted">Investors</a></li>
+                        <li class="nav-item mb-3"><a href="#" class="nav-link p-0 text-muted">Sustainability</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-12">
+                    <form>
+                        <h5 class="mb-3">Subscribe to our newsletter</h5>
+                        <p class="mb-3">Monthly digest of what's new and exciting from us.</p>
+                        <div class="d-flex w-100 gap-2">
+                            <label for="newsletter1" class="visually-hidden">Email address</label>
+                            <input id="newsletter1" type="text" class="form-control border-newsletter mb-2"
+                                   placeholder="Email address">
+                            <button class="btn btn-primary mb-2" type="button">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+
+
+            </div>
+
+            <div class="d-flex justify-content-between py-4 my-4 border-top">
+                <p>&copy; 2023 Nike, Inc. All Rights Reserved</p>
+                <ul class="list-unstyled d-flex">
+                    <li class="ms-3">
+                        <a class="link-dark" href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="ms-3">
+                        <a class="link-dark" href="#">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li class="ms-3">
+                        <a class="link-dark" href="#">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    function handleFooterPlaceholder() {
+        var footerPlaceholder = $("#footer-placeholder");
+        var footer = $("footer");
+
+        var footerTop = footer.offset().top;
+        var windowHeight = $(window).height();
+
+        $(window).scroll(function () {
+            var scroll = $(window).scrollTop();
+
+            if (scroll + windowHeight >= footerTop) {
+                footerPlaceholder.show();
+            } else {
+                footerPlaceholder.hide();
+            }
+        });
+    }
+
+    function handleImageBannerRotation() {
+        const images = ["/DOAN_WEBSITE_NIKE_LTW/Nike_Pics/assets/nike1/1.png", "/DOAN_WEBSITE_NIKE_LTW/Nike_Pics/assets/nike2/2.png", "/DOAN_WEBSITE_NIKE_LTW/Nike_Pics/assets/nike3/3.png", "/DOAN_WEBSITE_NIKE_LTW/Nike_Pics/assets/nike1/4.png"];
+        const bannerImage = document.querySelector('.banner-image img');
+        let currentIndex = 0;
+
+        function changeBanner() {
+            bannerImage.src = images[currentIndex];
+            currentIndex = (currentIndex + 1) % images.length;
+        }
+
+        setInterval(changeBanner, 4000);
+    }
+
+    function toggleMobileMenu() {
+        var navbarToggler = document.querySelector('.navbar-toggler');
+        var navbarCollapse = document.querySelector('.navbar-collapse');
+
+        navbarToggler.addEventListener('click', function () {
+            navbarCollapse.classList.toggle('show');
+        });
+    }
+
+    $(document).ready(function () {
+        handleFooterPlaceholder();
+        handleImageBannerRotation();
+        toggleMobileMenu();
+    });
+</script>
+
+
+</html>

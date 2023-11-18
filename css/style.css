@@ -1,0 +1,355 @@
+﻿
+/*--------------------- Header --------------------- */
+.header {
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.navbar-brand {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    padding: 0;
+}
+
+.nav-link {
+    color: #333;
+}
+
+.navbar-brand img {
+    max-height: 40px;
+}
+
+.item-size {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+
+
+.logo1 {
+    transition: #555 0.3s;
+}
+
+    .logo1:hover {
+        filter: brightness(0.8);
+    }
+
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 16px;
+    }
+
+    .item-size {
+        font-size: 20px;
+    }
+}
+
+
+
+
+
+/*--------------------- Search Bar --------------------- */
+.searchbar {
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 50px;
+    background-color: #f2f2f2;
+    border-radius: 30px;
+    padding: 5px;
+}
+
+.search_input {
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color: transparent;
+    line-height: 40px;
+    max-width: 300px;
+    transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_input {
+    padding: 0 10px;
+    width: 450px;
+    caret-color: #77a4ce;
+    transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_icon {
+    background: white;
+    color: #77a4ce;
+}
+
+.search_icon {
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #353b48;
+    text-decoration: none;
+}
+
+
+@media (max-width: 768px) {
+
+    .searchbar {
+        margin: 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 50px;
+        background-color: #f2f2f2;
+        border-radius: 30px;
+        padding: 5px;
+    }
+
+    .search_input {
+        color: #333;
+        font-size: 20px;
+        font-weight: bold;
+        border: 0;
+        outline: 0;
+        background: none;
+        width: 100%;
+        max-width: none;
+        caret-color: transparent;
+        line-height: 40px;
+        transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_input {
+        width: 100%;
+        caret-color: #77a4ce;
+        transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_icon {
+        background: white;
+        color: #77a4ce;
+    }
+}
+
+/*--------------------- Cart --------------------- */
+
+.cart-icon {
+    font-size: 18px;
+    margin-right: 10px;
+    color: #333;
+}
+
+.btn-outline-primary {
+    color: #333;
+    border-color: transparent;
+    border-radius: 50px;
+}
+
+    .btn-outline-primary:hover {
+        background-color: #333;
+        color: #fff;
+        border-color: transparent;
+    }
+
+
+/*--------------------- Banner --------------------- */
+
+#banner {
+    background-color: #f2f2f2;
+    padding: 3rem;
+    text-align: center;
+}
+
+.banner-title {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+#banner p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+#banner .btn-primary {
+    background-color: #333;
+    border-color: #333;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+    #banner .btn-primary:hover {
+        background-color: #555;
+        border-color: #555;
+        color: #fff;
+    }
+
+.title-ani {
+    color: #333;
+    transition: color 0.3s;
+}
+
+    .title-ani:hover {
+        color: #888;
+    }
+
+.banner-image img {
+    max-width: 100%;
+    height: auto;
+    width: auto\9;
+    max-height: 1000px;
+}
+
+
+@media (max-width: 768px) {
+    #banner {
+        padding: 2rem;
+    }
+
+    .banner-title {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    #banner p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    #banner .btn-primary {
+        font-size: 1.2rem;
+        padding: 8px 16px;
+    }
+
+    .banner-image {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+
+/*--------------------- Products --------------------- */
+#products {
+    padding: 3rem 0;
+}
+
+    #products h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+.card {
+    margin-bottom: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s, border 0.3s;
+}
+
+    .card:hover {
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        border: 2px solid #3333;
+    }
+
+.card-img-top {
+    height: 300px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: black;
+}
+
+.center-button {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .card {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+}
+
+
+
+/*--------------------- Footers --------------------- */
+
+
+
+.form-control {
+    border-radius: 22px;
+}
+
+.btn-primary {
+    border-radius: 22px;
+    background-color: #333;
+    border-color: #333;
+    color: #fff;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+    .btn-primary:hover {
+        background-color: #555;
+        border-color: #555;
+        color: #fff;
+    }
+
+    .btn-primary:active {
+        background-color: #777;
+        border-color: #777;
+    }
+
+.form-control:focus {
+    background-color: #fff;
+    border-color: #555;
+}
+
+#footer-placeholder {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+
+    .nav-link,
+    .nav-item,
+    .form-control,
+    .btn-primary,
+    h5,
+    p {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .col-3,
+    .col-2,
+    .col-4 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------*/

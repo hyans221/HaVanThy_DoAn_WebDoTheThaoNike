@@ -1,0 +1,243 @@
+﻿@model List<HaVanThy_DoAn_WebDoTheThaoNike.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/css/product.css")" />
+}
+
+
+<div>
+    <!-- ------------------------- Navbar1 ---------------------------->
+    <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom navbar1">
+        <!-- ------------------------- Filter -------------------------->
+        <div class="filter">
+            <button class="btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#mobile-filter"
+                    aria-expanded="false" aria-controls="mobile-filter">
+                Filters<span class="fa fa-filter pl-1"></span>
+            </button>
+        </div>
+
+        <!--------------------------- SortDropDown -------------------------->
+        <div class="sort-dropdown btn-outline-primary">
+            <span class="sort-text">Sort By</span>
+            <i class="sort-icon fa-solid fa-sort"></i>
+            <div class="sort-dropdown-menu">
+                <ul class="ul1">
+                    <li class="li1"><a href="#">Featured</a></li>
+                    <li class="li1"><a href="#">High-Low</a></li>
+                    <li class="li1"><a href="#">Low-High</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Filter in mobile  -->
+    <div id="mobile-filter" class="collapse">
+        <div>
+            <h6 class="p-1 border-bottom">Category</h6>
+            <ul class="ul1">
+                <li class="li1"><a href="#">Shoes</a></li>
+                <li class="li1"><a href="#">Clothing</a></li>
+                <li class="li1"><a href="#">Accessories</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h6 class="p-1 border-bottom">Price</h6>
+            <div>
+                <input type="range" class="custom-range" min="0" max="100" name="">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Min</label>
+                        <input class="form-control" placeholder="$0" type="number">
+                    </div>
+                    <div class="form-group text-right col-md-6">
+                        <label>Max</label>
+                        <input class="form-control" placeholder="$1,0000" type="number">
+                    </div>
+                </div>
+                <a href="#" class="highlight-button btn btn-medium button xs-margin-bottom-five" data-abc="true">
+                    Apply
+                    Now
+                </a>
+            </div>
+        </div>
+        <div>
+            <h6 class="p-1 border-bottom">Filter By</h6>
+            <p class="mb-2">Color</p>
+            <ul class="list-group ul1">
+                <li class="list-group-item rounded li1 d-flex justify-content-between align-items-center li1">
+                    <a href="#">
+                        <span class="fa fa-circle pr-1" id="red"></span>
+                        <span class="pl-2">Red</span>
+                    </a>
+                </li>
+                <li class="list-group-item rounded li1 d-flex justify-content-between align-items-center li1">
+                    <a href="#">
+                        <span class="fa fa-circle pr-1 ml-1" id="teal"></span>
+                        <span class="pl-2">Teal</span>
+                    </a>
+                </li>
+                <li class="list-group-item rounded li1 d-flex justify-content-between align-items-center li1">
+                    <a href="#">
+                        <span class="fa fa-circle pr-1" id="blue"></span>
+                        <span class="pl-2">Blue</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <h6>Gender</h6>
+            <form class="ml-md-2">
+                <div class="form-inline border rounded p-sm-2 my-2">
+                    <input type="checkbox" class="marg" name="type" id="men">
+                    <label for="men" class="pl-1 pt-sm-0 pt-1 ">Men</label>
+                </div>
+                <div class="form-inline border rounded p-sm-2 my-2">
+                    <input type="checkbox" class="marg" name="type" id="women">
+                    <label for="women" class="pl-1 pt-sm-0 ml-2 pt-1 ">Women</label>
+                </div>
+                <div class="form-inline border rounded p-md-2 p-sm-1">
+                    <input type="checkbox" class="marg" name="type" id="kid">
+                    <label for="kid" class="pl-1 pt-sm-0 pt-1 ">Kid</label>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Filter in PC -->
+    <section id="sidebar">
+        <div>
+            <h6 class="p-1 border-bottom">Category</h6>
+            <ul class="ul1">
+                <li class="li1"><a href="#">Shoes</a></li>
+                <li class="li1"><a href="#">Clothing</a></li>
+                <li class="li1"><a href="#">Accessories</a></li>
+            </ul>
+
+        </div>
+
+        <div>
+            <h6 class="p-1 border-bottom">Price</h6>
+            <div>
+                <input type="range" class="custom-range" min="0" max="100" name="">
+                <div class="form-row">
+                    <div class="form-group col-md-5">
+                        <label>Min</label>
+                        <input class="form-control" placeholder="$0" type="number">
+                    </div>
+                    <div class="form-group col-md-5 mb-2">
+                        <label class="text-right">Max</label>
+                        <input class="form-control" placeholder="$1,0000" type="number">
+                    </div>
+                </div>
+                <a href="#" class="highlight-button btn btn-medium button xs-margin-bottom-five mb-2"
+                   data-abc="true">Apply Now</a>
+            </div>
+        </div>
+
+        <div>
+            <h6 class="p-1 border-bottom">Color</h6>
+            <ul class="list-group ul1">
+                <li class="list-group-item rounded li1 d-flex justify-content-between align-items-center li1">
+                    <a href="#">
+                        <span class="fa fa-circle pr-1" id="red"></span>
+                        <span class="pl-2">Red</span>
+                    </a>
+                </li>
+                <li class="list-group-item rounded li1 d-flex justify-content-between align-items-center li1">
+                    <a href="#">
+                        <span class="fa fa-circle pr-1 ml-1" id="teal"></span>
+                        <span class="pl-2">Teal</span>
+                    </a>
+                </li>
+                <li class="list-group-item rounded li1 d-flex justify-content-between align-items-center li1">
+                    <a href="#">
+                        <span class="fa fa-circle pr-1" id="blue"></span>
+                        <span class="pl-2">Blue</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h6>Gender</h6>
+            <form class="ml-md-2">
+                <div class="form-inline border rounded p-sm-2 my-2 mb-2">
+                    <input type="checkbox" name="type" id="men">
+                    <label for="men" class="pl-1 pt-sm-0 pt-1">Men</label>
+                </div>
+                <div class="form-inline border rounded p-sm-2 my-2 mb-2">
+                    <input type="checkbox" name="type" id="women">
+                    <label for="women" class="pl-1 pt-sm-0 pt-1">Women</label>
+                </div>
+                <div class="form-inline border rounded p-md-2 p-sm-1 mb-2">
+                    <input type="checkbox" name="type" id="kid">
+                    <label for="kid" class="pl-1 pt-sm-0 pt-1">Kid</label>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <br />
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            string imagePath = @Url.Content("~/images/imgShoes/" + item.Image);
+            <div class="col-md-3 col-sm-6">
+                <div class="product-grid">
+                    <div class="product-image">
+                        <a href="#" class="image">
+                            <img class="img-1" src="@imagePath" alt="@item.ProductName">
+                        </a>
+                        <ul class="product-links">
+                            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="#"><i class="fa fa-eye"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="product-content">
+                        <div class="price">$@item.Price</div>
+                        <h3 class="title"><a href="/product/detail/@item.ProductID">@item.ProductName</a></h3>
+                        <ul class="rating mb-1">
+                            <li class="fas fa-star"></li>
+                            <li class="fas fa-star"></li>
+                            <li class="fas fa-star"></li>
+                            <li class="far fa-star"></li>
+                            <li class="far fa-star"></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+        function toggleSidebar() {
+            const sidebar = $('#sidebar');
+            if (sidebar.is(':visible')) {
+                sidebar.hide();
+            } else {
+                sidebar.show();
+            }
+        }
+
+        const sidebarToggle = $('.filter');
+        sidebarToggle.click(toggleSidebar);
+
+        $('a[href="#"]').click(function (e) {
+            e.preventDefault();
+        });
+    });
+</script>
+
