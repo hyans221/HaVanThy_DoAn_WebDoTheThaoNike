@@ -1,0 +1,93 @@
+﻿@model HaVanThy_DoAn_WebDoTheThaoNike.Models.Product
+@{
+    ViewBag.Title = "Edit Product";
+    var categorySelectList = new SelectList(ViewBag.Categories as List<HaVanThy_DoAn_WebDoTheThaoNike.Models.Category>, "CategoryID", "CategoryName");
+}
+
+<main class="mt-4">
+    <div class="container-fluid px-4">
+        <div class="card">
+            <div class="card-body row">
+                <div class="col-md-5">                    
+                    <img id="imagePreview" src="@Url.Content("~/images/imgShoes/" + Model.Image)" alt="Image Preview" style="max-width: 100%; height: auto;" />
+                </div>
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-6">
+                    @using (Html.BeginForm("Edit", "ProductAdmin", new { area = "Admin", id = Model.ProductID }, FormMethod.Post, new { @class = "row g-3", enctype = "multipart/form-data" }))
+
+                    {
+                        @Html.HiddenFor(model => model.ProductID)
+
+                        <fieldset>
+                            <h2>EDIT PRODUCT</h2>
+
+                            <!-- Product Name -->
+                            <div class="col-lg-10 col-md-12">
+                                @Html.LabelFor(model => model.ProductName)
+                                @Html.EditorFor(model => model.ProductName, new { htmlAttributes = new { @class = "form-control", placeholder = "Product Name" } })
+                                @Html.ValidationMessageFor(model => model.ProductName)
+                            </div>
+
+                            <!-- Description -->
+                            <div class="col-lg-10 col-md-12">
+                                @Html.LabelFor(model => model.Description)
+                                @Html.TextAreaFor(model => model.Description, new { @class = "form-control", placeholder = "Product Description" })
+                                @Html.ValidationMessageFor(model => model.Description)
+                            </div>
+
+                            <!-- Category -->
+                            <div class="col-lg-10 col-md-12">
+                                @Html.LabelFor(model => model.CategoryID, "Category", new { @class = "form-label" })
+                                @Html.DropDownListFor(model => model.CategoryID, categorySelectList, "Select Category", new { @class = "form-select" })
+                                @Html.ValidationMessageFor(model => model.CategoryID)
+                            </div>
+
+
+                            <!-- Price -->
+                            <div class="col-lg-10 col-md-12">
+                                @Html.LabelFor(model => model.Price)
+                                @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control", placeholder = "Price" } })
+                                @Html.ValidationMessageFor(model => model.Price)
+                            </div>
+
+                            <!-- Image -->
+                            <div class="col-lg-10 col-md-12">
+                                @Html.LabelFor(model => model.Image, "Chọn hình")
+                                <input type="file" name="imageFile" class="form-control" onchange="showImagePreview(this)">
+                                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                            </div>
+                        </fieldset>
+
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-danger">Save Changes</button>
+                            @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-secondary" })
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+<script>
+    var currentImage = "@Url.Content("~/images/imgShoes/" + Model.Image)";
+
+    function showImagePreview(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#imagePreview').attr('src', e.target.result);
+                $('#imagePreview').show();
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        } else {
+            $('#imagePreview').attr('src', currentImage);
+            $('#imagePreview').show();
+        }
+    }
+
+</script>

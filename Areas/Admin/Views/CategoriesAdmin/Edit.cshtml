@@ -1,0 +1,39 @@
+﻿@model HaVanThy_DoAn_WebDoTheThaoNike.Models.Category
+
+@{
+    ViewBag.Title = "Edit Category";
+}
+
+<main class="mt-4">
+    <div class="container-fluid px-4">
+        <div class="card">
+            <div class="card-body row">
+                <div class="col-md-12">
+                    @using (Html.BeginForm("Edit", "CategoriesAdmin", new { id = Model.CategoryID }, FormMethod.Post, new { @class = "row g-3" }))
+                    {
+                        @Html.HiddenFor(model => model.CategoryID)
+
+                        <fieldset>
+                            <h2>EDIT CATEGORY</h2>
+
+                            <!-- Category Name -->
+                            <div class="col-lg-10 col-md-12">
+                                @Html.LabelFor(model => model.CategoryName, "Category Name")
+                                @Html.EditorFor(model => model.CategoryName, new { htmlAttributes = new { @class = "form-control", placeholder = "Category Name" } })
+                                @Html.ValidationMessageFor(model => model.CategoryName, "", new { @class = "text-danger" })
+                            </div>
+
+                        </fieldset>
+
+                        <div class="col-12 mt-3">
+                            <button type="submit" class="btn btn-danger">Save Changes</button>
+                            @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-secondary" })
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+

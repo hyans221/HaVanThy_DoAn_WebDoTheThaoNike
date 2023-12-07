@@ -5,30 +5,55 @@
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
 }
 
-<h2>ProducDetail</h2>
+<style>
+    .back-button {
+        border: 2px solid #808080;
+        border-radius: 100%;
+        color: #808080;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        text-decoration: none;
+        background-color: transparent;
+        margin-left: -70px;
+        margin-top: -40px;
+    }
 
-<table class="table">
+        .back-button i {
+            margin-right: 5px;
+        }
+</style>
 
-    <tr>
-        <th>Product ID</th>
-        <td>@Model.ProductID</td>
-    </tr>
-    <tr>
-        <th>Product Name</th>
-        <td>@Model.ProductName</td>
-    </tr>
-    <tr>
-        <th>Price</th>
-        <td>@Model.Price.ToString("C")</td>
-    </tr>
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <a href="/product" class="btn back-button">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6">
+                <img class="card-img-top mb-5 mb-md-0" src="@Url.Content("~/images/imgShoes/" + Model.Image)" alt="@Model.ProductName" />
+            </div>
+            <div class="col-md-6">
+                <div class="small mb-1">@Model.Category.CategoryName</div>
+                <h1 class="display-5 fw-bolder">@Model.ProductName</h1>
+                <div class="fs-5 mb-5">
+                    <span class="text-decoration-line-through">@Model.Price.ToString("C")</span>
+                    <span>@Model.Price.ToString("C")</span>
+                </div>
+                <p class="lead">@Model.Description</p>
+                <div class="d-flex">
+                    <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
+                    <a class="btn btn-outline-dark flex-shrink-0" href="/cart/Add/@Model.ProductID" role="button">
+                        <i class="fa fa-shopping-cart bi-cart-fill me-1"></i>
+                        Add to cart
+                    </a>
 
-    <tr>
-        <th>Category ID</th>
-        <td>@Model.CategoryID</td>
-    </tr>
-
-
-</table>
-
-<a href="@Url.Action("Index", "Product")">Back to List of Products</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</br>
+</br>
 

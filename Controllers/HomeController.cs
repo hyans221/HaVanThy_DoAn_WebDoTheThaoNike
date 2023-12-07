@@ -13,5 +13,6 @@ namespace HaVanThy_DoAn_WebDoTheThaoNike.Controllers
         {
             return View();
         }
+
     }
 }

@@ -2,7 +2,16 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/css/homeStyle.css")" />
 }
+
+<style>
+    .titleNamePro {
+        text-decoration: none;
+        font-weight: bold;
+        color: #333333;
+    }
+</style>
 
 <body>
     <!-- ------------------------- BANNER ------------------------- -->
@@ -15,11 +24,11 @@
                         Shop the latest collection of Nike shoes. We offer a variety of sizes and colors to suit your
                         style.
                     </p>
-                    <a href="#" class="btn btn-primary">Shop Now</a>
+                    <a href="/product" class="btn btn-primary">Shop Now</a>
                 </div>
                 <div class="col-lg-6">
                     <div class="banner-image">
-                        <img src="/DOAN_WEBSITE_NIKE_LTW/Nike_Pics/assets/nike1/1.png" alt="Nike Shoes">
+                        <img src="~/images/imgBanner/banner1.png" alt="Nike Shoes" class="visible">
                     </div>
                 </div>
             </div>
@@ -28,39 +37,138 @@
 
 
 
-
     <!-- ------------------------- PRODUCTS ------------------------- -->
-    <section id="products">
+    </br>
+    <section class="proStyle">
         <div class="container">
             <h2>Featured Products</h2>
             <div class="row">
                 <div class="col-lg-4">
                     <div class="card">
-                        <img src="~/images/imgShoes/nike1.png" class="card-img-top"
-                             alt="Product 1">
+                        <img src="~/images/imgShoes/nike2.png" class="card-img-top" alt="Product 1">
                         <div class="card-body">
-                            <h5 class="card-title">Nike Air Max 1</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            <p class="price">$99.99</p>
-                            <a href="#" class="btn btn-primary center-button">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="card">
-                        <img src="~/images/imgShoes/nike1.png" class="card-img-top"
-                             alt="Product 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Nike Air Jordan</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            <p class="price">$129.99</p>
-                            <a href="#" class="btn btn-primary center-button">Add to Cart</a>
+                      
+                            <h5 class="card-title">
+                                <a href="/product/detail/2" class="titleNamePro">Nike Air Max 90 GORE-TEX</a>
+                            </h5>
+                            <p class="card-text">Men's Shoes</p>
+                            <p class="price">$249</p>
+                         
+                            <a class="btn btn-outline-dark flex-shrink-0" href="/cart/Add/2" role="button">
+                                <i class="fa fa-shopping-cart bi-cart-fill me-1"></i>
+                                Add to Cart
+                            </a>
                         </div>
                     </div>
                 </div>
 
+                <div class="col-lg-4">
+                    <div class="card">
+                        <img src="~/images/imgShoes/nike1.png" class="card-img-top" alt="Product 1">
+                        <div class="card-body">
+                            <!-- Product Name as a Link -->
+                            <h5 class="card-title">
+                                <a href="/product/detail/1" class="titleNamePro">Nike Air Force 1</a>
+                            </h5>
+                            <p class="card-text">Men's Shoes</p>
+                            <p class="price">$165</p>
+                            <!-- Updated Add to Cart Button -->
+                            <a class="btn btn-outline-dark flex-shrink-0" href="/cart/Add/1" role="button">
+                                <i class="fa fa-shopping-cart bi-cart-fill me-1"></i>
+                                Add to Cart
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card">
+                        <img src="~/images/imgShoes/nike5.png" class="card-img-top" alt="Product 1">
+                        <div class="card-body">
+                      
+                            <h5 class="card-title">
+                                <a href="/product/detail/5" class="titleNamePro">Nike Dunk Low</a>
+                            </h5>
+                            <p class="card-text">Men's Shoes</p>
+                            <p class="price">$350</p>
+                 
+                            <a class="btn btn-outline-dark flex-shrink-0" href="/cart/Add/5" role="button">
+                                <i class="fa fa-shopping-cart bi-cart-fill me-1"></i>
+                                Add to Cart
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="gallery">
+            <div class="galleryItem">
+                <img src="~/images/imgLogo/serAbout1.jpg" class="galleryImg" />
+                <h1 class="galleryTitle">Be Yourself</h1>
+            </div>
+            <div class="galleryItem">
+                <img src="~/images/imgLogo/serAbout2.jpg" class="galleryImg" />
+                <h1 class="galleryTitle">Just Do It</h1>
+            </div>
+            <div class="galleryItem">
+                <img src="~/images/imgLogo/serAbout3.jpg" class="galleryImg" />
+                <h1 class="galleryTitle">Stay Motivated</h1>
+            </div>
+        </div>
+
+    </section>S
+    <section>
+        <div class="newSeason">
+            <div class="nsItem">
+                <img src="~/images/imgBanner/banHom1.jpg" class="nsImg" />
+            </div>
+            <div class="nsItem">
+                <h3 class="nsTitleSm">SUMMER NEW ARRIVALS</h3>
+                <br />
+                <h1 class="nsTitle">New Season</h1>
+                <h1 class="nsTitle">New Collection</h1>
+                <br /><br />
+                <a href="/product">
+                    <button class="nsButton">CHOOSE YOUR STYLE</button>
+                </a>
+            </div>
+            <div class="nsItem">
+                <img src="~/images/imgBanner/banHom2.jpg" class="nsImg" />
             </div>
         </div>
     </section>
 </body>
 
+<script>
+    function handleImageBannerRotation() {
+        const images = [
+            "/images/imgBanner/banner1.png", 
+            "/images/imgBanner/banner2.png",
+            "/images/imgBanner/banner3.png",
+            "/images/imgBanner/banner4.png"
+        ];
+        const bannerImage = document.querySelector('.banner-image img');
+        let currentIndex = 0;
+
+        function changeBanner() {
+            bannerImage.classList.remove('visible');
+            bannerImage.src = images[currentIndex];
+
+            bannerImage.onload = () => {
+                bannerImage.classList.add('visible');
+            };
+
+            currentIndex = (currentIndex + 1) % images.length;
+        }
+
+        setInterval(changeBanner, 4000);
+    }
+
+    $(document).ready(function () {
+        handleImageBannerRotation();
+    });
+
+</script>

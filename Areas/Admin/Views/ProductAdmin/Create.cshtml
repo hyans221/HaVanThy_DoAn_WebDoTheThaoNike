@@ -1,0 +1,72 @@
+﻿@model HaVanThy_DoAn_WebDoTheThaoNike.Models.Product
+@{
+    ViewBag.Title = "Create Product";
+    var categorySelectList = new SelectList(ViewBag.Categories as List<HaVanThy_DoAn_WebDoTheThaoNike.Models.Category>, "CategoryID", "CategoryName");
+}
+
+
+
+<main class="mt-4">
+    <div class="container-fluid px-4">
+        <div class="card">
+            <div class="card-body row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-10">
+                    @using (Html.BeginForm("Create", "ProductAdmin", FormMethod.Post, new { @class = "row g-3", enctype = "multipart/form-data" }))
+                    {
+                        <fieldset>
+                            <h2 class="mb-4">ADD NEW PRODUCT</h2>
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                            <!-- Product Name -->
+                            <div class="col-lg-8 col-md-12">
+                                @Html.LabelFor(model => model.ProductName, new { @class = "form-label" })
+                                @Html.EditorFor(model => model.ProductName, new { htmlAttributes = new { @class = "form-control", placeholder = "Product Name" } })
+                                @Html.ValidationMessageFor(model => model.ProductName, "", new { @class = "text-danger" })
+                            </div>
+
+                            <!-- Description -->
+                            <div class="col-lg-8 col-md-12">
+                                @Html.LabelFor(model => model.Description, new { @class = "form-label" })
+                                @Html.TextAreaFor(model => model.Description, new { @class = "form-control", placeholder = "Product Description" })
+                                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                            </div>
+
+                            <!-- Other fields follow the same pattern -->
+                            <div class="col-md-8">
+                                @Html.LabelFor(model => model.CategoryID, "Category", new { @class = "form-label" })
+                                @Html.DropDownListFor(model => model.CategoryID, categorySelectList, "Select Category", new { @class = "form-select" })
+                                @Html.ValidationMessageFor(model => model.CategoryID)
+                            </div>
+
+                            <div class="col-md-8">
+                                @Html.LabelFor(model => model.Price)
+                                @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control", placeholder = "Price" } })
+                                @Html.ValidationMessageFor(model => model.Price)
+                            </div>
+
+                            <div class="col-md-8">
+                                @Html.LabelFor(model => model.Image, "Chọn hình")
+                                <input type="file" name="imageFile" class="form-control">
+                                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                            </div>
+
+                        </fieldset>
+                        @Html.ValidationSummary()
+                        <div class="col-12 mt-3">
+                            <button type="submit" class="btn btn-primary">Create</button>
+                            @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-secondary" })
+                        </div>
+                    }
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</main>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+
+
+
+

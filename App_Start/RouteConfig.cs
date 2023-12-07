@@ -16,7 +16,8 @@ namespace HaVanThy_DoAn_WebDoTheThaoNike
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                namespaces: new[] { "HaVanThy_DoAn_WebDoTheThaoNike.Controllers" }
             );
         }
     }

@@ -1,0 +1,39 @@
+﻿@model HaVanThy_DoAn_WebDoTheThaoNike.ViewModel.LoginVM
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/css/accountStyle.css")" />
+
+}
+
+<div class="bodyLogin">
+    <section class="sectionLogin">
+        @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "login-form" }))
+        {
+            <h1 class="h1Login">Login</h1>
+            <div class="inputbox">
+                <ion-icon name="mail-outline"></ion-icon>
+                @Html.TextBoxFor(temp => temp.Username, new { @class = "email-input", required = "required" })
+                @Html.ValidationMessageFor(temp => temp.Username)
+                <label for="">Username</label>
+            </div>
+            <div class="inputbox">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                @Html.PasswordFor(temp => temp.Password, new { @class = "password-input", required = "required" })
+                @Html.ValidationMessageFor(temp => temp.Password)
+                <label for="">Password</label>
+            </div>
+            <div class="forget">
+                <label for=""><input type="checkbox">Remember Me</label>
+                <a href="#">Forget Password</a>
+            </div>
+            <button type="submit" class="buttonLogin">Log in</button>
+            <div class="register">
+                <p>Don't have an account <a href="/account/register">Register</a></p>
+            </div>
+        }
+    </section>
+</div>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

@@ -1,0 +1,113 @@
+﻿@model List<HaVanThy_DoAn_WebDoTheThaoNike.Models.Product>
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    .product-image {
+        width: 30px;
+        height: 30px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .edit-link {
+        background-color: cadetblue;
+        color: #fff;
+        border: none;
+    }
+
+    .delete-link {
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+    }
+
+    .btn-custom {
+        padding: 5px 10px;
+        margin: 2px;
+    }
+
+    .proName {
+        text-decoration: none;
+        font-weight: bold;
+        color: black
+    }
+</style>
+
+<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Tables</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="/admin/homeAdmin/index">Dashboard</a></li>
+            <li class="breadcrumb-item active">Products</li>
+        </ol>
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table me-1"></i>
+                DataTable Example
+            </div>
+
+            <div class="card-body">
+                <a href="/admin/productAdmin/create" class="btn btn-primary mb-1">Create New Product</a>
+                <table id="datatablesSimple">
+                    <thead>
+                        <tr>
+                            <th>Product ID</th>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>Category Name</th>
+                            <th>Image</th>
+                            <th>Choose</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Product ID</th>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>Category Name</th>
+                            <th>Image</th>
+                            <th>Choose</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @if (Model != null && Model.Any())
+                        {
+                            foreach (var item in Model)
+                            {
+
+                                <tr>
+                                    <td>@item.ProductID</td>
+                                    <td>@Html.ActionLink(@item.ProductName, "Detail", new { id = item.ProductID }, new { @class = "proName" })</td>
+                                    <td>@item.Price.ToString("C")</td>
+                                    <td>@item.Category.CategoryName</td>
+                                    <td>
+                                        @if (!string.IsNullOrEmpty(item.Image))
+                                        {
+                                            <img src="@Url.Content("~/images/imgShoes/" + item.Image)" alt="@item.ProductName" class="product-image">
+                                        }
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.ProductID, controller = "ProductAdmin", area = "Admin" }, new { @class = "btn btn-custom btn-sm edit-link" }) |
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.ProductID, controller = "ProductAdmin", area = "Admin" }, new { @class = "btn btn-custom btn-sm delete-link" })
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="5"> No products available</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+

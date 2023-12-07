@@ -1,0 +1,38 @@
+﻿@model HaVanThy_DoAn_WebDoTheThaoNike.Models.Product
+@{
+    ViewBag.Title = "Detail";
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/css/detailPro.css")" />
+}
+
+<main>
+    <div class="container-fluid px-4">
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <a href="/admin/productAdmin" class="btn back-button">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+                <div class="row gx-4 gx-lg-5 align-items-center">
+                    <div class="col-md-6">
+                        <img class="card-img-top mb-5 mb-md-0" src="@Url.Content("~/images/imgShoes/" + Model.Image)" alt="@Model.ProductName" />
+                    </div>
+                    <div class="col-md-6">
+                        <div class="small mb-1">@Model.Category.CategoryName</div>
+                        <h1 class="display-5 fw-bolder">@Model.ProductName</h1>
+                        <div class="fs-5 mb-5">
+                            <span class="text-decoration-line-through">@Model.Price.ToString("C")</span>
+                            <span>@Model.Price.ToString("C")</span>
+                        </div>
+                        <p class="lead">@Model.Description</p>
+                        <div class="d-flex">
+                            <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
+                            <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                                <i class="fa fa-shopping-cart bi-cart-fill me-1"></i>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>

@@ -1,0 +1,67 @@
+﻿@model List<HaVanThy_DoAn_WebDoTheThaoNike.Identity.AppUser>
+
+@{
+    ViewBag.Title = "Users";
+}
+
+<style>
+    .edit-link {
+        background-color: cadetblue;
+        color: #fff;
+        border: none;
+    }
+
+    .delete-link {
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+    }
+
+    .btn-custom {
+        padding: 5px 10px;
+        margin: 2px;
+    }
+
+    .proName {
+        text-decoration: none;
+        font-weight: bold;
+        color: black
+    }
+</style>
+
+<main>
+    <div class="container-fluid px-4">
+        </br>
+        <a href="@Url.Action("Create", "Account", new { area = "Admin" })" class="btn btn-primary mb-1">Create New User</a>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>City</th>
+                    <th>Date Of Birth</th>
+                    <th>Actions</th> 
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.UserName</td>
+                        <td>@item.Email</td>
+                        <td>@item.PhoneNumber</td>
+                        <td>@item.City</td>
+                        <td>@(item.DateOfBirth.HasValue ? item.DateOfBirth.Value.ToString("dd/MM/yyyy") : "")</td>
+
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id, controller = "Account", area = "Admin" }, new { @class = "btn btn-custom btn-sm edit-link" }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id, controller = "Account", area = "Admin" }, new { @class = "btn btn-custom btn-sm delete-link" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</main>

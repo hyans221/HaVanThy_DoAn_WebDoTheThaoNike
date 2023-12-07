@@ -1,0 +1,70 @@
+﻿@model List<HaVanThy_DoAn_WebDoTheThaoNike.Models.Category>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    .product-image {
+        width: 30px;
+        height: 30px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .edit-link {
+        background-color: cadetblue;
+        color: #fff;
+        border: none;
+    }
+
+    .delete-link {
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+    }
+
+    .btn-custom {
+        padding: 5px 10px;
+        margin: 2px;
+    }
+
+    .proName {
+        text-decoration: none;
+        font-weight: bold;
+        color: black
+    }
+</style>
+
+<main>
+    <div class="container-fluid px-4">
+        </br>
+        <a href="@Url.Action("Create", "CategoriesAdmin", new { area = "Admin" })" class="btn btn-primary mb-1">Create New Category</a>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Category ID</th>
+                    <th>Category Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.CategoryID</td>
+                        <td>@item.CategoryName</td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.CategoryID, controller = "CategoriesAdmin", area = "Admin" }, new { @class = "btn btn-custom btn-sm edit-link" }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.CategoryID, controller = "CategoriesAdmin", area = "Admin" }, new { @class = "btn btn-custom btn-sm delete-link" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</main>
+
+

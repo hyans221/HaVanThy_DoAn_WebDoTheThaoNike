@@ -1,0 +1,38 @@
+﻿.back-button {
+    border: 2px solid #808080;
+    border-radius: 100%;
+    color: #808080;
+    display: inline-flex;
+    align-items: center;
+    s justify-content: center;
+    padding: 10px;
+    text-decoration: none;
+    background-color: transparent;
+    margin-left: -60px;
+    margin-top: -40px;
+    display: none;
+}
+
+    .back-button i {
+        margin-right: 5px;
+    }
+
+@media only screen and (min-width: 768px) {
+    .back-button {
+        display: inline-flex;
+    }
+}
+
+
+/*--------------------- Dropdown --------------------- */
+
+.dropdown-Style {
+    margin-left: -30px;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .dropdown-Style {
+        margin-left: 0;
+    }
+}

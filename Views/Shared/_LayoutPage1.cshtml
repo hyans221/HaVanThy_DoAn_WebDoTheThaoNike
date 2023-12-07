@@ -5,12 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nike Store | HaVanThy</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/font-awesome.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="~/Scripts/jquery-3.7.1.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" type="text/css" href="@Url.Content("~/css/style.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/css/detailPro.css")" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>@ViewBag.Title</title>
 </head>
 
@@ -20,7 +25,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
                 <a class="navbar-brand" href="/home/index">
-                    <img src="~/images/imgBanner/logo2.png" alt="Nike Store Logo" class="logo1">
+                    <img src="~/images/imgLogo/logo2.png" alt="Nike Store Logo" class="logo1">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -37,10 +42,10 @@
                             <a class="nav-link item-size" href="/product/index">Shop</a>
                         </li>
                         <li>
-                            <a class="nav-link item-size" href="#">About</a>
+                            <a class="nav-link item-size" href="/about/index">About</a>
                         </li>
                         <li>
-                            <a class="nav-link item-size" href="#">Contact</a>
+                            <a class="nav-link item-size" href="/contact/index">Contact</a>
                         </li>
                     </ul>
                     <div class="search-container h-100">
@@ -51,12 +56,33 @@
                             </div>
                         </div>
                     </div>
-                    <a class="btn btn-outline-primary ms-2 cart-button" href="#">
+                    <a class="btn btn-outline-primary ms-2 cart-button" href="/cart/index">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                     </a>
-                    <a class="btn btn-outline-primary ms-2 cart-button" href="#">
-                        <i class="fa-solid fa-user" aria-hidden="true"></i>
-                    </a>
+                    <div class="dropdown">
+                        <a class="btn btn-outline-primary ms-2 cart-button dropdown-toggle" href="#" role="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-user" aria-hidden="true"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-Style" aria-labelledby="userDropdown">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                if (User.IsInRole("Admin"))
+                                {
+                                    <li><a class="dropdown-item" href="/admin/homeAdmin">AdminPage</a></li>
+                                    <hr class="dropdown-divider" />
+                                }
+                                <li><a class="dropdown-item " href="/account/MyProfile">Profile: @User.Identity.Name</a></li>
+                                <li><a class="dropdown-item" href="/account/logout">Sign out</a></li>
+                            }
+                            else
+                            {
+                                <li><a class="dropdown-item" href="/account/register">Register</a></li>
+                                <hr class="dropdown-divider" />
+                                <li><a class="dropdown-item" href="/account/login">Login</a></li>
+                            }
+                        </ul>
+                    </div>
+
                 </div>
             </div>
         </nav>
@@ -156,7 +182,7 @@
     </div>
 </body>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 <script>
     function handleFooterPlaceholder() {
@@ -177,19 +203,6 @@
         });
     }
 
-    function handleImageBannerRotation() {
-        const images = ["/DOAN_WEBSITE_NIKE_LTW/Nike_Pics/assets/nike1/1.png", "/DOAN_WEBSITE_NIKE_LTW/Nike_Pics/assets/nike2/2.png", "/DOAN_WEBSITE_NIKE_LTW/Nike_Pics/assets/nike3/3.png", "/DOAN_WEBSITE_NIKE_LTW/Nike_Pics/assets/nike1/4.png"];
-        const bannerImage = document.querySelector('.banner-image img');
-        let currentIndex = 0;
-
-        function changeBanner() {
-            bannerImage.src = images[currentIndex];
-            currentIndex = (currentIndex + 1) % images.length;
-        }
-
-        setInterval(changeBanner, 4000);
-    }
-
     function toggleMobileMenu() {
         var navbarToggler = document.querySelector('.navbar-toggler');
         var navbarCollapse = document.querySelector('.navbar-collapse');
@@ -201,10 +214,7 @@
 
     $(document).ready(function () {
         handleFooterPlaceholder();
-        handleImageBannerRotation();
         toggleMobileMenu();
     });
 </script>
-
-
 </html>

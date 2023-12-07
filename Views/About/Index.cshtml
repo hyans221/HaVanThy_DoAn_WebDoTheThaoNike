@@ -1,0 +1,141 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/css/contactStyle.css")" />
+}
+
+<style>
+    .left-image img {
+        max-width: 100%;
+        max-height: 500px;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto;
+    }
+</style>
+<!-- ***** Main Banner Area Start ***** -->
+</br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="inner-content">
+                <h2>About NIKE</h2>
+                <span>Just Do It</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ***** Main Banner Area End ***** -->
+<!-- ***** About Area Starts ***** -->
+<div class="about-us">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="left-image">
+                    <img src="~/images/imgLogo/nikeAbout.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="right-content">
+                    <h4>About Us &amp; Our Skills</h4>
+                    <span>Nike is a global sportswear powerhouse known for its iconic sneakers, innovative athletic gear, and a commitment to athlete empowerment. Founded in 1964, Nike continues to inspire and equip athletes worldwide.</span>
+                    <div class="quote">
+                        <i class="fa fa-quote-left"></i><p>Innovative Footwear: Nike is renowned for pioneering athletic shoe technology, from Air Max to Flyknit, setting trends in comfort and style.</p>
+                    </div>
+                    <p>Inspiring Excellence: Nike's iconic "Just Do It" motto embodies a culture of determination, encouraging individuals to chase their athletic dreams.</p>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>                        
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ***** About Area Ends ***** -->
+</br>
+<!-- ***** Services Area Starts ***** -->
+<section class="our-services">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading">
+                    <h2>Our Services</h2>
+                    <span>High-performance sportswear, customized options, and expert training support from Nike.</span>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="service-item">
+                    <h4>Premium Athletic Gear</h4>
+                    <p>Nike offers top-quality sports apparel, footwear, and accessories for athletes worldwide.</p>
+                    <img src="~/images/imgLogo/serAbout1.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="service-item">
+                    <h4>Customization Options</h4>
+                    <p>Personalize your gear with NikeID, tailoring products to your unique style and preferences.</p>
+                    <img src="~/images/imgLogo/serAbout2.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="service-item">
+                    <h4>Expert Training Support</h4>
+                    <p>Access training tips, apps, and resources to elevate your performance and fitness journey</p>
+                    <img src="~/images/imgLogo/serAbout3.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Services Area Ends ***** -->
+<!-- ***** Subscribe Area Starts ***** -->
+<div class="subscribe">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="section-heading">
+                    <h2>By Subscribing To Our Newsletter You Can Get 10% Off</h2>
+                    <span>Details to details is what makes Nike different.</span>
+                </div>
+                <form id="subscribe" action="" method="get">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <fieldset>
+                                <input name="name" type="text" id="name" class="borderRad" placeholder="Your name" required="">
+                            </fieldset>
+                        </div>
+
+                        <div class="col-lg-2">
+                            <fieldset>
+                                <button type="submit" id="form-submit" class="main-dark-button borderRad"><i class="fa fa-paper-plane"></i></button>
+                            </fieldset>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-4">
+                <div class="row">
+                    <div class="col-6">
+                        <ul>
+                            <li>Store Location:<br><span>Find Nike retail stores near you</span></li>
+                            <li>Phone:<br><span>1-800-344-64530</span></li>
+                            <li>Office Location:<br><span>United States</span></li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <ul>
+                            <li>Work Hours:<br><span>07:30 AM - 10:30 PM Daily</span></li>
+                            <li>Email:<br><span>nike@company.com</span></li>
+                            <li>Social Media:<br><span><a href="#">Facebook</a>, <a href="#">Instagram</a>, <a href="#">Tiktok</a></a></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ***** Subscribe Area Ends ***** -->

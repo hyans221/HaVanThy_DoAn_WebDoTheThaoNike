@@ -207,7 +207,13 @@
     height: auto;
     width: auto\9;
     max-height: 1000px;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
 }
+
+    .banner-image img.visible {
+        opacity: 1;
+    }
 
 
 @media (max-width: 768px) {
@@ -293,6 +299,7 @@
 
 
 
+
 /*--------------------- Footers --------------------- */
 
 
@@ -348,6 +355,15 @@
         text-align: center;
         margin-bottom: 20px;
     }
+}
+
+/*-------------- CSS Validation --------------*/
+.field-validation-error {
+    color: red;
+}
+
+.validation-summary-errors {
+    color: grey;
 }
 
 

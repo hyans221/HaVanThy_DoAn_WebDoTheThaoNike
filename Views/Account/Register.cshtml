@@ -1,0 +1,75 @@
+﻿@model HaVanThy_DoAn_WebDoTheThaoNike.ViewModel.RegisterVM
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/css/accountStyle.css")" />
+}
+
+<div class="bodyLogin">
+    <section class="sectionRegister">
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "register-form" }))
+        {
+            <h1 class="h1Login">Register</h1>
+            <div class="inputbox">
+                <ion-icon name="person-outline"></ion-icon>
+                @Html.TextBoxFor(temp => temp.Username, new { @class = "username-input", required = "required" })
+                <label for="">Username</label>
+                @Html.ValidationMessageFor(temp => temp.Username)
+            </div>
+
+            <div class="inputbox">
+                <ion-icon name="mail-outline"></ion-icon>
+                @Html.TextBoxFor(temp => temp.Email, new { @class = "email-input", required = "required" })
+                <label for="">Email</label>
+                @Html.ValidationMessageFor(temp => temp.Email)
+            </div>
+
+            <div class="inputbox">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                @Html.PasswordFor(temp => temp.Password, new { @class = "password-input", required = "required" })
+                <label for="">Password</label>
+                @Html.ValidationMessageFor(temp => temp.Password)
+            </div>
+
+            <div class="inputbox">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                @Html.PasswordFor(temp => temp.ConfirmPassword, new { @class = "confirm-password-input", required = "required" })
+                <label for="">Confirm Password</label>
+                @Html.ValidationMessageFor(temp => temp.ConfirmPassword)
+            </div>
+
+            <div class="inputbox">
+                <ion-icon name="call-outline"></ion-icon>
+                @Html.TextBoxFor(temp => temp.Mobile, new { @class = "mobile-input", required = "required" })
+                <label for="">Mobile</label>
+                @Html.ValidationMessageFor(temp => temp.Mobile)
+            </div>
+
+            <div class="inputbox">
+                @Html.TextBoxFor(temp => temp.DateOfBirth, new { @class = "calendar-outline-input", type = "date", required = "required" })
+                @Html.ValidationMessageFor(temp => temp.DateOfBirth)
+            </div>
+
+            <div class="inputbox">
+                <ion-icon name="locate-outline"></ion-icon>
+                @Html.TextBoxFor(temp => temp.Address, new { @class = "address-input" })
+                <label for="">Address</label>
+            </div>
+
+            <div class="inputbox">
+                <ion-icon name="location-outline"></ion-icon>
+                @Html.TextBoxFor(temp => temp.City, new { @class = "city-input" })
+                <label for="">City</label>
+
+            </div>
+
+            <button type="submit" class="buttonLogin">Register</button>
+            <div class="register">
+                <p>Already have an account? <a href="/account/login">Login</a></p>
+            </div>
+        }
+    </section>
+</div>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
