@@ -30,10 +30,5 @@
       - Xây dựng một trang sử dụng ajax lấy thông tin từ API và hiển thị lên danh sách
 
 - Cách tiếp cận DB:
-  - DB First hoặc Code First
-
-- Yêu cầu thêm (không bắt buộc):
-  - Không yêu cầu deploy web app lên internet, nhưng nếu thực hiện được sẽ được cộng thêm điểm
-### Mindmap
-![image](https://github.com/hyans221/DoAn_WebBanDoTheThaoNike/assets/89960460/7d191bc6-5bc9-4bb4-afbb-6bc3ff975d7b)
+  - Code First
 
