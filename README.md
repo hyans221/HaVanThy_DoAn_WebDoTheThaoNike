@@ -5,9 +5,8 @@
     - Bootstrap
     - jQuery
     - Font Awesome
-  - Sử dụng tất cả Framework khác cho phần giao diện
 
-- Chức năng bắt buộc:
+- Chức năng:
   - Trang chủ:
     - Hiển thị tổng quan về các sản phẩm
   - Trang hiển thị danh sách sản phẩm:
@@ -20,7 +19,7 @@
       - Cho phép người dùng chọn thêm vào giỏ hàng, thanh toán, ...
   - Chức năng Admin:
     - Tạo 2 role: Admin và User
-    - Chỉ có Admin mới được truy cập nội dung này
+      - Chỉ có Admin mới được truy cập nội dung này
     - Quản lý người dùng:
       - Xem, Thêm, Xóa, Sửa người dùng
     - Quản lý sản phẩm:
