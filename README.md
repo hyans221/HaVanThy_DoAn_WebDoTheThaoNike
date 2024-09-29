@@ -53,7 +53,8 @@
 
 The system uses a **Code-First** approach for database management, which allows for easy updates and migrations.
 
-![Database Diagram](images/database_diagram.png)
+![Database Diagram](https://github.com/user-attachments/assets/b9d668ac-a524-40e7-af1d-4b55f7a32254)
+
 
 ## Screenshots of Key Functionalities
 
