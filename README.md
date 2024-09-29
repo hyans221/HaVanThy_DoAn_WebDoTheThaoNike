@@ -66,8 +66,12 @@ The system uses a **Code-First** approach for database management, which allows 
 ![Product Listing](https://github.com/user-attachments/assets/3bbe3880-4508-4a20-83c6-2dece22efe25)
 
 
+### Product Details
+![Product Details](https://github.com/user-attachments/assets/a765c7fe-e0e8-4d73-8cb5-1fd545604ba5)
+
+
 ### Shopping Cart
-![Shopping Cart](https://github.com/user-attachments/assets/a765c7fe-e0e8-4d73-8cb5-1fd545604ba5)
+![Shopping Cart](https://github.com/user-attachments/assets/7c2606df-6ff4-4b02-9e9a-69b2ca96809d)
 
 
 ### About Page
@@ -96,10 +100,6 @@ The system uses a **Code-First** approach for database management, which allows 
 ### Product Management
 ![Product Management](https://github.com/user-attachments/assets/49c8a44e-2c99-47f6-80a8-c84b7589aa23)
 
-
-### Order Management
-
-![Order Management](https://github.com/user-attachments/assets/7c2606df-6ff4-4b02-9e9a-69b2ca96809d)
 
 ## Technology Stack
 
