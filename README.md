@@ -59,25 +59,47 @@ The system uses a **Code-First** approach for database management, which allows 
 ## Screenshots of Key Functionalities
 
 ### Home Page
-![Home Page](images/home_page.png)
+![Home Page](https://github.com/user-attachments/assets/40d5f205-49d4-4386-85ea-316b02954573)
+
 
 ### Product Listing
-![Product Listing](images/product_listing.png)
+![Product Listing](https://github.com/user-attachments/assets/3bbe3880-4508-4a20-83c6-2dece22efe25)
+
 
 ### Shopping Cart
-![Shopping Cart](images/shopping_cart.png)
+![Shopping Cart](https://github.com/user-attachments/assets/a765c7fe-e0e8-4d73-8cb5-1fd545604ba5)
 
-### Admin Dashboard
-![Admin Dashboard](images/admin_dashboard.png)
 
-### User Management
-![User Management](images/user_management.png)
+### About Page
+![About Page](https://github.com/user-attachments/assets/93a50dae-e0f6-4f33-a21e-e6380141afa1)
+
+
+### Contact Page
+![Contact Page](https://github.com/user-attachments/assets/aa31d261-d4f0-4794-803c-f37edc1290bd)
+
+
+### Login Page
+![Login Page](https://github.com/user-attachments/assets/0ff7fdd9-4922-4cc8-9eb5-f6ddd049d76b)
+
+
+### User Credentials
+
+| Role       | Username    | Password |
+|------------|-------------|----------|
+| **Admin**  | admin       | thy123   |
+
+
+### Category Management
+![Category Management](https://github.com/user-attachments/assets/073a2da0-c708-445e-b72b-480de784521d)
+
 
 ### Product Management
-![Product Management](images/product_management.png)
+![Product Management](https://github.com/user-attachments/assets/49c8a44e-2c99-47f6-80a8-c84b7589aa23)
+
 
 ### Order Management
-![Order Management](images/order_management.png)
+
+![Order Management](https://github.com/user-attachments/assets/7c2606df-6ff4-4b02-9e9a-69b2ca96809d)
 
 ## Technology Stack
 
